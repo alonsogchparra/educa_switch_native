@@ -78,10 +78,26 @@ export class Home extends Component {
     );
   };
 
-  render() {
+  renderSeparator = () => {
     return (
-      <View>
-        <Text> textInComponent </Text>
+      <View
+        style={{
+          height: 1,
+          width: "86%",
+          backgroundColor: "#CED0CE",
+          marginLeft: "14%"
+        }}
+      />
+    );
+  }
+
+  render() {
+
+    const { navigation } = this.props;
+
+    return (
+      <View style={{ flex: 1}}>
+        <HomeHeader navigation={navigation} />
       </View>
     );
   }
