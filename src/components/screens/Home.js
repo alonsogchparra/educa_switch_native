@@ -56,6 +56,28 @@ export class Home extends Component {
     })
   }
 
+  handleRefresh = () => {
+    this.setState({
+      page: 1,
+      seed: this.state.seed + 1,
+      refreshing: true,
+    },
+    () => {
+      this.requestUsers();
+      }
+    );
+  };
+
+  handleLoadMore = () => {
+    this.setState({
+      page: this.state.page + 1,
+    },
+    () => {
+      this.requestUsers();
+      }
+    );
+  };
+
   render() {
     return (
       <View>
